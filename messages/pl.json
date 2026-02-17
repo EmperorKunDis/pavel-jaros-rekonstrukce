@@ -1,149 +1,167 @@
 {
-  "nav": {
-    "properties": "Nieruchomości",
-    "services": "Usługi",
-    "references": "Referencje",
-    "about": "O mnie",
-    "contact": "Kontakt",
-    "contactMe": "SKONTAKTUJ SIĘ ZE MNĄ"
-  },
   "cookie": {
-    "message": "Aby zapewnić najlepsze usługi, używamy technologii takich jak pliki cookie do przechowywania i/lub uzyskiwania dostępu do informacji o urządzeniu.",
-    "reject": "Odrzuć",
-    "accept": "Akceptuj",
-    "preferences": "Pokaż preferencje"
+    "message": "Ta strona u\u017cywa plik\u00f3w cookie w celu poprawy do\u015bwiadcze\u0144 u\u017cytkownika. Korzystaj\u0105c z tej strony, zgadzasz si\u0119 z nasz\u0105 polityk\u0105 cookie.",
+    "accept": "Zaakceptuj wszystko",
+    "reject": "Odrzu\u0107 wszystko",
+    "preferences": "Poka\u017c preferencje"
+  },
+  "nav": {
+    "home": "Strona g\u0142\u00f3wna",
+    "services": "Us\u0142ugi",
+    "projects": "Realizacje",
+    "about": "O nas",
+    "contact": "Kontakt",
+    "cta": "Bezp\u0142atna wycena"
   },
   "hero": {
-    "title": "Zmaksymalizuj zysk z Twojej nieruchomości",
-    "cta": "MOJE OFEROWANE USŁUGI"
-  },
-  "properties": {
-    "viewProperty": "ZOBACZ NIERUCHOMOŚĆ",
-    "moreProperties": "WIĘCEJ NIERUCHOMOŚCI"
+    "title": "Zamieniamy Twoje marzenia w rzeczywisto\u015b\u0107.",
+    "subtitle": "Wykonujemy kompleksowe remonty mieszka\u0144 i dom\u00f3w w regionie Karlowych War\u00f3w. Od wst\u0119pnego projektu po ko\u0144cowe sprz\u0105tanie \u2013 niezawodnie, jako\u015bciowo i terminowo.",
+    "ctaPrimary": "Oblicz koszt remontu",
+    "ctaSecondary": "Zobacz nasze realizacje"
   },
   "services": {
-    "title": "USŁUGI",
-    "bookMeeting": "UMÓW SPOTKANIE",
-    "sale": {
-      "title": "SPRZEDAŻ",
-      "description": "Moim celem jest sprzedaż Twojej nieruchomości za najwyższą możliwą cenę na rynku i zapewnienie, że cały proces przebiegnie płynnie i efektywnie."
+    "title": "Od drobnych poprawek po kompleksow\u0105 przemian\u0119",
+    "cores": {
+      "title": "Remonty rdzeni \u0142azienkowych",
+      "text": "Modernizujemy i przebudowujemy prefabrykowane i murowane rdzenie \u0142azienkowe. Zwi\u0119ksz komfort i warto\u015b\u0107 swojego mieszkania."
     },
-    "rent": {
-      "title": "WYNAJEM",
-      "description": "Zawsze staram się osiągnąć najwyższą cenę wynajmu, jednocześnie znajdując wypłacalnych najemców zainteresowanych długoterminowym wynajmem."
+    "apartments": {
+      "title": "Kompleksowe remonty mieszka\u0144",
+      "text": "Zajmujemy si\u0119 wszystkim \u2013 od prac wyburzeniowych przez nowe instalacje po wyko\u0144czenia i monta\u017c kuchni."
     },
-    "marketing": {
-      "title": "MARKETING I STRATEGIA",
-      "description": "Marketing i reklama są integralną częścią mojej pracy. Dbam o wybór odpowiedniej strategii z maksymalnym zaangażowaniem."
+    "houses": {
+      "title": "Remonty dom\u00f3w",
+      "text": "Wykonujemy wewn\u0119trzne i zewn\u0119trzne remonty dom\u00f3w, w tym ocieplenie, elewacje i zmiany uk\u0142adu."
     },
-    "presentation": {
-      "title": "PREZENTACJA NIERUCHOMOŚCI",
-      "description": "Prezentując nieruchomość, zawsze kładę nacisk na szczegóły, wykorzystując najnowsze technologie, w tym wysokiej jakości fotografię i wizualizacje 3D."
-    },
-    "reconstruction": {
-      "title": "RENOWACJA NIERUCHOMOŚCI",
-      "description": "Dzięki doświadczeniu z kilku kompletnych renowacji mogę polecić odpowiednie rozwiązania i w razie potrzeby zorganizować specjalistów."
-    },
-    "valuation": {
-      "title": "WYCENA NIERUCHOMOŚCI",
-      "description": "Do wyceny nieruchomości używam sprawdzonych narzędzi, takich jak mapy cen wraz z księgą wieczystą."
-    },
-    "activities": {
-      "subtitle": "W CZYM NAJCZĘŚCIEJ POMAGAM MOIM KLIENTOM",
-      "title": "MOJA PRACA OBEJMUJE NASTĘPUJĄCE DZIAŁANIA",
-      "list": {
-        "communication": "Komunikacja biznesowa z potencjalnymi klientami",
-        "targeting": "Identyfikacja i specyfikacja grupy docelowej",
-        "negotiation": "Negocjowanie najlepszych warunków sprzedaży",
-        "documentation": "Przygotowanie dokumentacji",
-        "supervision": "Nadzór nad sprawą biznesową od początku do końca",
-        "strategy": "Ustalanie strategii marketingowej i promocji",
-        "socialMedia": "Płatna promocja w mediach społecznościowych",
-        "materials": "Przygotowanie i tworzenie materiałów reklamowych",
-        "flyers": "Dystrybucja ulotek",
-        "print": "Umieszczanie ogłoszeń w mediach drukowanych",
-        "portals": "Publikowanie ofert na wszystkich portalach nieruchomości",
-        "websites": "Tworzenie stron internetowych dla nieruchomości"
-      }
+    "crafts": {
+      "title": "Prace rzemie\u015blnicze",
+      "text": "Oferujemy r\u00f3wnie\u017c indywidualne prace murarskie, glazurnicze, pod\u0142ogowe, hydrauliczne i elektryczne."
     }
   },
-  "about": {
-    "subtitle": "O MNIE",
-    "title": "PAVEL JAROŠ",
-    "intro": "Nazywam się Pavel Jaroš i jestem agentem nieruchomości, który nieustannie dąży do rozwoju zawodowego i doskonalenia w tej dziedzinie.",
-    "origin": "Pochodzę z Chebu i od czterech lat działam w nieruchomościach jako inwestor (zakup - renowacja - sprzedaż). Zajmuję się bardzo popularnym tzw. flippingiem nieruchomości.",
-    "motivation": "Ponieważ chciałbym się doskonalić w tej dziedzinie, zdecydowałem się na ścieżkę agenta nieruchomości. Ta praca sprawia mi przyjemność głównie ze względu na jej różnorodność. Zajmuję się nie tylko biznesem, ale także kwestiami prawnymi i samą budową. Każdy dzień jest inny, co mnie wypełnia.",
-    "passion": "Lubię znajdować odpowiednie rozwiązania, komunikować się, łączyć dostawców, inwestorów i wszystko inne związane z nieruchomościami. Lubię spotykać nowych ludzi i rozwiązywać sprawy, z którymi inni sobie nie radzą. Zadowolenie klientów jest dla mnie najwyższą nagrodą.",
-    "values": "Charakteryzuję się empatią i w pełni rozumiem, że każdy klient wymaga indywidualnego i elastycznego podejścia. Cenię dobrą reputację i imię.",
-    "hobby": "W wolnym czasie lubię uprawiać sport, nie wyobrażam już sobie dobrze spędzonego dnia bez wizyty na siłowni. Jako prawdziwy entuzjasta kocham też adrenalinę - skoki spadochronowe i wszelkie atrakcje adrenalinowe, idę na całość. Życie trzeba żyć.",
-    "location": {
-      "title": "LOKALIZACJA",
-      "text": "Działam głównie w Pradze, w regionach środkowoczeskim i zachodnioczeski, ale jestem otwarty na współpracę w całej Republice Czeskiej."
+  "why": {
+    "title": "Tw\u00f3j remont bez stresu i kompromis\u00f3w",
+    "one": {
+      "title": "Jedna firma, wszystkie fachowcy",
+      "text": "Nie musisz szuka\u0107 i koordynowa\u0107 r\u00f3\u017cnych rzemie\u015blnik\u00f3w. Zajmujemy si\u0119 kompletnym zarz\u0105dzaniem projektem, oszcz\u0119dzaj\u0105c Tw\u00f3j czas i nerwy."
     },
-    "experience": {
-      "title": "JAK DŁUGO?",
-      "text1": "Jako inwestor nieruchomości mam za sobą cztery lata udanych projektów, w tym kilka udanych flippingów nieruchomości.",
-      "text2": "Do niedawna sam organizowałem kompletne remonty mieszkań w ich pierwotnym stanie, teraz mam małą firmę budowlaną i nie stanowi dla mnie problemu pomoc klientowi w czymkolwiek i modyfikacja nieruchomości tak, aby rezultatem była łatwa sprzedaż i wyższy zysk."
+    "two": {
+      "title": "Dotrzymujemy termin\u00f3w i bud\u017cet\u00f3w",
+      "text": "Na pocz\u0105tku ustalamy sta\u0142y bud\u017cet i harmonogram prac, kt\u00f3ry jest dla nas wi\u0105\u017c\u0105cy. Z nami nie spotkaj\u0105 Ci\u0119 \u017cadne nieprzyjemne niespodzianki."
     },
-    "commission": {
-      "title": "PROWIZJA",
-      "text": "Przy sprzedaży nieruchomości opłata znana jako prowizja jest płacona przez sprzedającego. Ostatecznie jest to logiczne, ponieważ sprzedający jest tym, kto wybiera agenta i którego interesy agent broni. Kwota prowizji nie jest stała i może się różnić w zależności od wielu czynników, takich jak strategia sprzedaży, budżet marketingowy, lokalizacja i cena nieruchomości. Jednak prowizja zazwyczaj mieści się w przedziale 3 - 5% ceny zakupu nieruchomości."
+    "three": {
+      "title": "Nacisk na jako\u015b\u0107 i detale",
+      "text": "U\u017cywamy certyfikowanych materia\u0142\u00f3w i sprawdzonych metod. K\u0142adziemy nacisk na precyzyjne wykonanie ka\u017cdego detalu, bo to si\u0119 liczy."
     },
-    "why": {
-      "title": "DLACZEGO WARTO ZE MNĄ WSPÓŁPRACOWAĆ?",
-      "individual": "Indywidualne podejście zorientowane na klienta",
-      "professional": "Profesjonalna prezentacja nieruchomości",
-      "efficiency": "Efektywność",
-      "experience": "Wieloletnie doświadczenie w nieruchomościach",
-      "flexibility": "Elastyczność"
+    "four": {
+      "title": "Indywidualne podej\u015bcie i doradztwo",
+      "text": "Jeste\u015bmy Twoim partnerem przez ca\u0142y czas trwania projektu. S\u0142uchamy Twoich \u017cycze\u0144 i ch\u0119tnie doradzimy w wyborze materia\u0142\u00f3w i rozwi\u0105za\u0144 technicznych."
+    }
+  },
+  "projects": {
+    "title": "Zobacz, jak pracujemy",
+    "subtitle": "Nasza praca m\u00f3wi sama za siebie",
+    "project1": {
+      "name": "Metamorfoza mieszkania 3+1",
+      "location": "Karlowe Wary"
+    },
+    "project2": {
+      "name": "Nowa \u0142azienka i rdze\u0144",
+      "location": "Cheb"
+    },
+    "project3": {
+      "name": "Remont parteru domu jednorodzinnego",
+      "location": "Sokolov"
+    },
+    "viewAll": "Zobacz wszystkie projekty",
+    "before": "PRZED",
+    "after": "PO"
+  },
+  "process": {
+    "title": "Twoja droga do nowego domu w 5 krokach",
+    "step1": {
+      "title": "Kontakt i wst\u0119pna konsultacja",
+      "text": "Zadzwo\u0144 do nas lub napisz. Om\u00f3wimy Twoje pomys\u0142y i um\u00f3wimy si\u0119 na osobiste spotkanie na miejscu realizacji. Wszystko bezp\u0142atnie."
+    },
+    "step2": {
+      "title": "Pomiary i wycena",
+      "text": "Wykonujemy dok\u0142adne pomiary, omawiamy materia\u0142y i w ci\u0105gu tygodnia przygotowujemy szczeg\u00f3\u0142ow\u0105 i przejrzyst\u0105 wycen\u0119."
+    },
+    "step3": {
+      "title": "Umowa i harmonogram",
+      "text": "Po zatwierdzeniu wyceny podpisujemy umow\u0119 o dzie\u0142o zawieraj\u0105c\u0105 sta\u0142y bud\u017cet, zakres prac i wi\u0105\u017c\u0105cy harmonogram."
+    },
+    "step4": {
+      "title": "Realizacja remontu",
+      "text": "Nasz zesp\u00f3\u0142 bierze si\u0119 do pracy. Podczas budowy regularnie si\u0119 z Tob\u0105 komunikujemy i przeprowadzamy dni kontrolne."
+    },
+    "step5": {
+      "title": "Przekazanie i gwarancja",
+      "text": "Po zako\u0144czeniu prac i ko\u0144cowym sprz\u0105taniu formalnie przekazujemy projekt. Na nasz\u0105 prac\u0119 oczywi\u015bcie udzielamy pe\u0142nej gwarancji."
     }
   },
   "references": {
-    "subtitle": "CO MÓWIĄ O MNIE MOJE KLIENCI",
-    "title": "REFERENCJE",
+    "title": "Setki zadowolonych klient\u00f3w w regionie",
     "client1": {
-      "name": "Daniela Baudýsová",
-      "text": "Dziękujemy za szybką i bezproblemową sprzedaż domku. Pan Jaroš jest pomocny, uczynny i bardzo profesjonalny. Rozumie swoją pracę. Zdecydowanie polecamy."
+      "name": "Rodzina Novak\u00f3w",
+      "location": "Maria\u0144skie \u0141a\u017anie",
+      "text": "Firma PJ-Rekonstrukce ca\u0142kowicie wyremontowa\u0142a nasze mieszkanie. Doceniam doskona\u0142\u0105 komunikacj\u0119 pana Jaroša i dotrzymanie zar\u00f3wno ceny, jak i harmonogramu. Wszystko przebiega\u0142o absolutnie g\u0142adko."
     },
     "client2": {
-      "name": "David",
-      "text": "Pan Jaroš był świetny - profesjonalny, szybki i zawsze dostępny. Czasami miałem wrażenie, że gdyby było trzeba, sprzedałby własną babcię - a mimo to wynegocjowałby lepszą cenę. Dzięki za bezproblemową sprzedaż i ludzkie podejście."
-    },
-    "client3": {
-      "name": "Josef Neumann",
-      "text": "Proaktywne podejście i doskonała komunikacja. Maksymalna satysfakcja!"
+      "name": "Petr S.",
+      "location": "Cheb",
+      "text": "Potrzebowa\u0142em szybko wyremontowa\u0107 mieszkanie po najemcach przed kolejnym wynajmem. Wszystko zarz\u0105dzili w rekordowym czasie i w doskona\u0142ej jako\u015bci. Mog\u0119 tylko poleci\u0107."
     }
   },
   "contact": {
-    "subtitle": "POZOSTAŃMY W KONTAKCIE",
-    "title": "KONTAKT",
-    "address": {
-      "title": "ADRES",
-      "text": "Kaprova 52/6, Praga 1"
-    },
-    "phone": {
-      "title": "TELEFON",
-      "text": "+420 777 558 730"
-    },
-    "email": {
-      "title": "E-MAIL",
-      "text": "pavel.jaros@kwcz.cz"
-    },
+    "title": "Zapytaj o bezp\u0142atn\u0105 wycen\u0119",
+    "subtitle": "Masz projekt, w kt\u00f3rym mo\u017cemy pom\u00f3c? Wype\u0142nij poni\u017cszy formularz lub zadzwo\u0144. Odezwiemy si\u0119 w ci\u0105gu 48 godzin i um\u00f3wimy pierwsze kroki.",
+    "phone": "+420 777 558 730",
+    "email": "pavel.jaros@kwcz.cz",
+    "address": "Region Karlowych War\u00f3w",
+    "hours": "Pn - Pt: 8:00 - 16:00",
+    "ico": "NIP: 10846671",
     "form": {
-      "name": "Imię i nazwisko",
-      "email": "E-mail",
-      "phone": "Numer telefonu",
-      "message": "Twoja wiadomość",
-      "weekend": "Czy możemy skontaktować się z Tobą w weekendy?",
-      "gdpr": "Czy zgadzasz się na przetwarzanie danych osobowych zgodnie z ustawą nr 101/2000 Dz.U. o ochronie danych osobowych",
-      "submit": "WYŚLIJ"
+      "name": "Twoje imi\u0119 i nazwisko*",
+      "email": "Tw\u00f3j e-mail*",
+      "phone": "Tw\u00f3j telefon*",
+      "service": "Jak\u0105 us\u0142ug\u0105 jeste\u015b zainteresowany?",
+      "serviceOptions": {
+        "apartment": "Kompleksowy remont mieszkania",
+        "core": "Remont rdzenia \u0142azienkowego",
+        "house": "Remont domu",
+        "other": "Inne..."
+      },
+      "message": "Kr\u00f3tko opisz sw\u00f3j projekt*",
+      "files": "Za\u0142\u0105cz pliki (rzut, zdj\u0119cia - opcjonalnie)",
+      "gdpr": "Wyra\u017cam zgod\u0119 na przetwarzanie danych osobowych.*",
+      "submit": "Wy\u015blij zapytanie",
+      "sending": "Wysy\u0142anie...",
+      "success": "Dzi\u0119kujemy za wiadomo\u015b\u0107! Odezwiemy si\u0119 jak najszybciej.",
+      "error": "Wyst\u0105pi\u0142 b\u0142\u0105d podczas wysy\u0142ania formularza. Spr\u00f3buj ponownie."
     }
   },
   "footer": {
-    "gdpr": "Przeglądając stronę, zgadzasz się na przetwarzanie danych osobowych i plików cookie.",
-    "business": "Jednoosobowy przedsiębiorca, prowadzący działalność na podstawie licencji handlowej, ID: 10846671, upoważniony do działania w imieniu Keller Williams Metropolitan, będącego placówką MC Metropolitan s.r.o., ID: 07796340.",
-    "ethics": "Kodeks etyczny",
-    "consumer": "Informacje dla konsumentów",
-    "whistleblow": "Wewnętrzny system zgłaszania"
+    "contact": {
+      "title": "Kontakt",
+      "name": "Pavel Jaros",
+      "phone": "+420 777 558 730",
+      "email": "pavel.jaros@kwcz.cz",
+      "ico": "NIP: 10846671",
+      "address": "Kaprova 52/6, Praga 1"
+    },
+    "services": {
+      "title": "Nasze pozosta\u0142e us\u0142ugi",
+      "reality": "PJ-Reality",
+      "management": "PJ-Sprava",
+      "design": "PJ-Design"
+    },
+    "info": {
+      "title": "Nawigacja",
+      "services": "Nasze us\u0142ugi",
+      "projects": "Przyk\u0142ady naszej pracy",
+      "process": "Jak wygl\u0105da wsp\u00f3\u0142praca"
+    },
+    "copyright": "\u00a9 2025 PJ-Rekonstrukce. Wszelkie prawa zastrze\u017cone.",
+    "privacy": "Polityka prywatno\u015bci"
   }
 }

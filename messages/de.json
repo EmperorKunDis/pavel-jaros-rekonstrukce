@@ -1,149 +1,167 @@
 {
-  "nav": {
-    "properties": "Immobilien",
-    "services": "Dienstleistungen",
-    "references": "Referenzen",
-    "about": "Über mich",
-    "contact": "Kontakt",
-    "contactMe": "KONTAKTIEREN SIE MICH"
-  },
   "cookie": {
-    "message": "Um die bestmöglichen Dienste bereitzustellen, verwenden wir Technologien wie Cookies zum Speichern und/oder Zugreifen auf Geräteinformationen.",
-    "reject": "Ablehnen",
-    "accept": "Akzeptieren",
+    "message": "Diese Website verwendet Cookies, um Ihr Erlebnis zu verbessern. Durch die Nutzung dieser Website stimmen Sie unseren Cookie-Richtlinien zu.",
+    "accept": "Alle akzeptieren",
+    "reject": "Alle ablehnen",
     "preferences": "Einstellungen anzeigen"
   },
-  "hero": {
-    "title": "Maximieren Sie den Gewinn aus Ihrer Immobilie",
-    "cta": "MEINE ANGEBOTENEN DIENSTLEISTUNGEN"
+  "nav": {
+    "home": "Startseite",
+    "services": "Leistungen",
+    "projects": "Projekte",
+    "about": "\u00dcber uns",
+    "contact": "Kontakt",
+    "cta": "Unverbindliches Angebot"
   },
-  "properties": {
-    "viewProperty": "IMMOBILIE ANSEHEN",
-    "moreProperties": "MEHR IMMOBILIEN"
+  "hero": {
+    "title": "Wir verwandeln Ihre Tr\u00e4ume in Realit\u00e4t.",
+    "subtitle": "Wir f\u00fchren komplette Wohnungs- und Hausrenovierungen in der Region Karlovy Vary durch. Vom ersten Entwurf bis zur Endreinigung \u2013 zuverl\u00e4ssig, qualitativ und termingerecht.",
+    "ctaPrimary": "Renovierungskosten berechnen",
+    "ctaSecondary": "Unsere Projekte ansehen"
   },
   "services": {
-    "title": "DIENSTLEISTUNGEN",
-    "bookMeeting": "TERMIN VEREINBAREN",
-    "sale": {
-      "title": "VERKAUF",
-      "description": "Mein Ziel ist es, Ihre Immobilie zum höchstmöglichen Preis auf dem Markt zu verkaufen und sicherzustellen, dass der gesamte Prozess reibungslos und effizient abläuft."
+    "title": "Von kleinen Anpassungen bis zur kompletten Umgestaltung",
+    "cores": {
+      "title": "Badkern-Renovierungen",
+      "text": "Wir modernisieren und bauen Fertigbad- und Mauerwerkskerne um. Erh\u00f6hen Sie den Komfort und Wert Ihrer Wohnung."
     },
-    "rent": {
-      "title": "VERMIETUNG",
-      "description": "Ich strebe immer danach, den höchstmöglichen Mietpreis zu erzielen und gleichzeitig zahlungskräftige Mieter zu finden, die an einer langfristigen Miete interessiert sind."
+    "apartments": {
+      "title": "Komplette Wohnungsrenovierungen",
+      "text": "Wir k\u00fcmmern uns um alles \u2013 von Abbrucharbeiten \u00fcber neue Installationen bis hin zu Oberfl\u00e4chen und K\u00fccheneinbau."
     },
-    "marketing": {
-      "title": "MARKETING & STRATEGIE",
-      "description": "Marketing und Werbung sind ein wesentlicher Bestandteil meiner Arbeit. Ich lege Wert auf die Wahl der richtigen Strategie mit maximalem Engagement."
+    "houses": {
+      "title": "Hausrenovierungen",
+      "text": "Wir f\u00fchren Innen- und Au\u00dfenrenovierungen von H\u00e4usern durch, einschlie\u00dflich D\u00e4mmung, Fassaden und Grundriss\u00e4nderungen."
     },
-    "presentation": {
-      "title": "IMMOBILIENPRÄSENTATION",
-      "description": "Bei der Präsentation einer Immobilie lege ich immer Wert auf Details unter Verwendung der neuesten Technologien, einschließlich hochwertiger Fotografie und 3D-Visualisierungen."
-    },
-    "reconstruction": {
-      "title": "IMMOBILIENREKONSTRUKTION",
-      "description": "Dank der Erfahrung aus mehreren vollständigen Rekonstruktionen kann ich geeignete Lösungen empfehlen und bei Bedarf Fachleute organisieren."
-    },
-    "valuation": {
-      "title": "IMMOBILIENBEWERTUNG",
-      "description": "Für die Immobilienbewertung verwende ich bewährte Werkzeuge wie Preiskarten zusammen mit dem Grundbuch."
-    },
-    "activities": {
-      "subtitle": "WOBEI ICH MEINEN KUNDEN AM HÄUFIGSTEN HELFE",
-      "title": "MEINE ARBEIT UMFASST FOLGENDE TÄTIGKEITEN",
-      "list": {
-        "communication": "Geschäftskommunikation mit Interessenten",
-        "targeting": "Identifizierung und Spezifikation der Zielgruppe",
-        "negotiation": "Verhandlung der besten Verkaufsbedingungen",
-        "documentation": "Dokumentationsvorbereitung",
-        "supervision": "Überwachung des Geschäftsfalls von Anfang bis Ende",
-        "strategy": "Festlegung der Marketingstrategie und Förderung",
-        "socialMedia": "Bezahlte Werbung in sozialen Medien",
-        "materials": "Vorbereitung und Erstellung von Werbematerialien",
-        "flyers": "Flyer-Verteilung",
-        "print": "Platzierung von Anzeigen in Printmedien",
-        "portals": "Veröffentlichung von Inseraten auf allen Immobilienportalen",
-        "websites": "Erstellung von Websites für Immobilien"
-      }
+    "crafts": {
+      "title": "Handwerksleistungen",
+      "text": "Wir bieten auch einzelne Maurer-, Fliesen-, Boden-, Klempner- und Elektroarbeiten an."
     }
   },
-  "about": {
-    "subtitle": "ÜBER MICH",
-    "title": "PAVEL JAROŠ",
-    "intro": "Ich heiße Pavel Jaroš und bin ein Immobilienmakler, der ständig nach beruflichem Wachstum und Verbesserung in diesem Bereich strebt.",
-    "origin": "Ich komme aus Cheb und bin seit vier Jahren als Investor im Immobilienbereich tätig (Kauf - Rekonstruktion - Verkauf). Ich beschäftige mich mit dem sehr beliebten sogenannten Immobilien-Flipping.",
-    "motivation": "Da ich mich in diesem Bereich verbessern möchte, habe ich mich für den Weg eines Immobilienmaklers entschieden. Diese Arbeit macht mir vor allem wegen ihrer Vielfalt Spaß. Ich beschäftige mich nicht nur mit Geschäften, sondern auch mit rechtlichen Fragen und dem Bau selbst. Jeder Tag ist anders, was mich erfüllt.",
-    "passion": "Ich finde gerne geeignete Lösungen, kommuniziere, verbinde Lieferanten, Investoren und alles andere, was mit Immobilien zu tun hat. Ich treffe gerne neue Menschen und löse Fälle, die andere nicht bewältigen können. Kundenzufriedenheit ist für mich die höchste Belohnung.",
-    "values": "Ich zeichne mich durch Empathie aus und verstehe vollkommen, dass jeder Kunde einen individuellen und flexiblen Ansatz erfordert. Ich lege Wert auf einen guten Ruf und Namen.",
-    "hobby": "In meiner Freizeit treibe ich gerne Sport, ich kann mir einen gut verbrachten Tag ohne Fitnessstudio nicht mehr vorstellen. Als richtiger Enthusiast liebe ich auch Adrenalin - Fallschirmsprünge und alle Adrenalin-Attraktionen, ich gehe voll rein. Das Leben muss gelebt werden.",
-    "location": {
-      "title": "STANDORT",
-      "text": "Ich bin hauptsächlich in Prag, in der mittelböhmischen und westböhmischen Region tätig, bin aber offen für eine Zusammenarbeit in der gesamten Tschechischen Republik."
+  "why": {
+    "title": "Ihre Renovierung ohne Stress und Kompromisse",
+    "one": {
+      "title": "Eine Firma, alle Gewerke",
+      "text": "Sie m\u00fcssen keine verschiedenen Handwerker suchen und koordinieren. Wir \u00fcbernehmen das komplette Projektmanagement und sparen Ihnen Zeit und Sorgen."
     },
-    "experience": {
-      "title": "WIE LANGE?",
-      "text1": "Als Immobilieninvestor habe ich vier Jahre erfolgreicher Projekte hinter mir, darunter mehrere erfolgreiche Immobilien-Flips.",
-      "text2": "Bis vor kurzem habe ich komplette Wohnungsrenovierungen in ihrem ursprünglichen Zustand selbst organisiert, jetzt habe ich eine kleine Baufirma und es ist daher kein Problem für mich, einem Kunden bei allem zu helfen und die Immobilie so zu modifizieren, dass das Ergebnis ein einfacher Verkauf und höherer Gewinn ist."
+    "two": {
+      "title": "Wir halten Termine und Budgets ein",
+      "text": "Zu Beginn legen wir ein festes Budget und einen Zeitplan fest, der f\u00fcr uns verbindlich ist. Mit uns gibt es keine unangenehmen \u00dcberraschungen."
     },
-    "commission": {
-      "title": "PROVISION",
-      "text": "Beim Verkauf einer Immobilie wird die als Provision bekannte Gebühr vom Verkäufer bezahlt. Letztendlich ist dies logisch, weil der Verkäufer derjenige ist, der den Makler auswählt und dessen Interessen der Makler verteidigt. Die Provisionshöhe ist nicht festgelegt und kann je nach einer Reihe von Faktoren wie Verkaufsstrategie, Marketingbudget, Standort und Immobilienpreis variieren. In der Regel liegt die Provision jedoch zwischen 3 - 5% des Kaufpreises der Immobilie."
+    "three": {
+      "title": "Fokus auf Qualit\u00e4t und Detail",
+      "text": "Wir verwenden zertifizierte Materialien und bew\u00e4hrte Verfahren. Wir legen Wert auf pr\u00e4zise Ausf\u00fchrung jedes Details, denn darauf kommt es an."
     },
-    "why": {
-      "title": "WARUM MIT MIR ARBEITEN?",
-      "individual": "Individueller kundenorientierter Ansatz",
-      "professional": "Professionelle Immobilienpräsentation",
-      "efficiency": "Effizienz",
-      "experience": "Langjährige Erfahrung im Immobilienbereich",
-      "flexibility": "Flexibilität"
+    "four": {
+      "title": "Pers\u00f6nlicher Ansatz und Beratung",
+      "text": "Wir sind Ihr Partner w\u00e4hrend des gesamten Projekts. Wir h\u00f6ren auf Ihre W\u00fcnsche und beraten Sie gerne bei der Materialauswahl und technischen L\u00f6sungen."
+    }
+  },
+  "projects": {
+    "title": "Sehen Sie, wie wir arbeiten",
+    "subtitle": "Unsere Arbeit spricht f\u00fcr sich",
+    "project1": {
+      "name": "Umgestaltung einer 3+1 Wohnung",
+      "location": "Karlovy Vary"
+    },
+    "project2": {
+      "name": "Neues Bad und Kern",
+      "location": "Cheb"
+    },
+    "project3": {
+      "name": "Erdgeschoss-Renovierung eines Einfamilienhauses",
+      "location": "Sokolov"
+    },
+    "viewAll": "Alle Projekte ansehen",
+    "before": "VORHER",
+    "after": "NACHHER"
+  },
+  "process": {
+    "title": "Ihr Weg zum neuen Zuhause in 5 Schritten",
+    "step1": {
+      "title": "Kontakt und Erstberatung",
+      "text": "Rufen Sie uns an oder schreiben Sie uns. Wir besprechen Ihre Vorstellungen und vereinbaren ein pers\u00f6nliches Treffen vor Ort. Alles kostenlos."
+    },
+    "step2": {
+      "title": "Vermessung und Angebot",
+      "text": "Wir f\u00fchren genaue Vermessungen durch, besprechen Materialien und erstellen innerhalb einer Woche ein detailliertes und transparentes Angebot."
+    },
+    "step3": {
+      "title": "Vertrag und Zeitplan",
+      "text": "Nach Genehmigung des Angebots unterzeichnen wir einen Werkvertrag mit festem Budget, Arbeitsumfang und verbindlichem Zeitplan."
+    },
+    "step4": {
+      "title": "Renovierungsdurchf\u00fchrung",
+      "text": "Unser Team macht sich an die Arbeit. W\u00e4hrend der Bauphase kommunizieren wir regelm\u00e4\u00dfig mit Ihnen und f\u00fchren Kontrolltage durch."
+    },
+    "step5": {
+      "title": "\u00dcbergabe und Garantie",
+      "text": "Nach Fertigstellung und Endreinigung \u00fcbergeben wir das Projekt formell. Auf unsere Arbeit gew\u00e4hren wir selbstverst\u00e4ndlich volle Garantie."
     }
   },
   "references": {
-    "subtitle": "WAS MEINE KUNDEN ÜBER MICH SAGEN",
-    "title": "REFERENZEN",
+    "title": "Hunderte zufriedener Kunden in der Region",
     "client1": {
-      "name": "Daniela Baudýsová",
-      "text": "Vielen Dank für den schnellen und problemlosen Verkauf des Ferienhauses. Herr Jaroš ist hilfsbereit, entgegenkommend und sehr professionell. Er versteht seine Arbeit. Wir empfehlen ihn auf jeden Fall weiter."
+      "name": "Familie Novak",
+      "location": "Marienbad",
+      "text": "Die Firma PJ-Rekonstrukce hat unsere Wohnung komplett renoviert. Ich sch\u00e4tze die hervorragende Kommunikation von Herrn Jaros und die Einhaltung von Preis und Zeitplan. Alles lief absolut reibungslos."
     },
     "client2": {
-      "name": "David",
-      "text": "Herr Jaroš war großartig - professionell, schnell und immer verfügbar. Manchmal hatte ich das Gefühl, dass er bei Bedarf seine eigene Großmutter verkaufen würde - und trotzdem einen besseren Preis aushandeln würde. Danke für den problemlosen Verkauf und die menschliche Herangehensweise."
-    },
-    "client3": {
-      "name": "Josef Neumann",
-      "text": "Proaktiver Ansatz und perfekte Kommunikation. Maximale Zufriedenheit!"
+      "name": "Petr S.",
+      "location": "Cheb",
+      "text": "Ich musste eine Wohnung nach Mietern schnell vor der n\u00e4chsten Vermietung renovieren. Sie haben alles in Rekordzeit und in hervorragender Qualit\u00e4t geschafft. Ich kann nur empfehlen."
     }
   },
   "contact": {
-    "subtitle": "IN KONTAKT BLEIBEN",
-    "title": "KONTAKT",
-    "address": {
-      "title": "ADRESSE",
-      "text": "Kaprova 52/6, Prag 1"
-    },
-    "phone": {
-      "title": "TELEFON",
-      "text": "+420 777 558 730"
-    },
-    "email": {
-      "title": "E-MAIL",
-      "text": "pavel.jaros@kwcz.cz"
-    },
+    "title": "Fordern Sie ein unverbindliches Angebot an",
+    "subtitle": "Haben Sie ein Projekt, bei dem wir helfen k\u00f6nnen? F\u00fcllen Sie das Formular aus oder rufen Sie uns an. Wir melden uns innerhalb von 48 Stunden und vereinbaren die ersten Schritte.",
+    "phone": "+420 777 558 730",
+    "email": "pavel.jaros@kwcz.cz",
+    "address": "Region Karlovy Vary",
+    "hours": "Mo - Fr: 8:00 - 16:00",
+    "ico": "ID: 10846671",
     "form": {
-      "name": "Name und Nachname",
-      "email": "E-Mail",
-      "phone": "Telefonnummer",
-      "message": "Ihre Nachricht",
-      "weekend": "Können wir Sie am Wochenende kontaktieren?",
-      "gdpr": "Stimmen Sie der Verarbeitung personenbezogener Daten gemäß Gesetz Nr. 101/2000 Slg. über den Schutz personenbezogener Daten zu",
-      "submit": "SENDEN"
+      "name": "Ihr vollst\u00e4ndiger Name*",
+      "email": "Ihre E-Mail*",
+      "phone": "Ihre Telefonnummer*",
+      "service": "An welcher Leistung sind Sie interessiert?",
+      "serviceOptions": {
+        "apartment": "Komplette Wohnungsrenovierung",
+        "core": "Badkern-Renovierung",
+        "house": "Hausrenovierung",
+        "other": "Sonstiges..."
+      },
+      "message": "Beschreiben Sie kurz Ihr Projekt*",
+      "files": "Dateien anh\u00e4ngen (Grundriss, Fotos - optional)",
+      "gdpr": "Ich stimme der Verarbeitung personenbezogener Daten zu.*",
+      "submit": "Anfrage senden",
+      "sending": "Wird gesendet...",
+      "success": "Vielen Dank f\u00fcr Ihre Nachricht! Wir melden uns so schnell wie m\u00f6glich.",
+      "error": "Beim Senden des Formulars ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
     }
   },
   "footer": {
-    "gdpr": "Durch das Durchsuchen der Website stimmen Sie der Verarbeitung personenbezogener Daten und Cookies zu.",
-    "business": "Einzelunternehmer, der auf der Grundlage einer Gewerbeerlaubnis tätig ist, ID: 10846671, bevollmächtigt, im Namen von Keller Williams Metropolitan zu handeln, einer Niederlassung der MC Metropolitan s.r.o., ID: 07796340.",
-    "ethics": "Ethikkodex",
-    "consumer": "Verbraucherinformation",
-    "whistleblow": "Internes Meldesystem"
+    "contact": {
+      "title": "Kontakt",
+      "name": "Pavel Jaros",
+      "phone": "+420 777 558 730",
+      "email": "pavel.jaros@kwcz.cz",
+      "ico": "ID: 10846671",
+      "address": "Kaprova 52/6, Prag 1"
+    },
+    "services": {
+      "title": "Unsere weiteren Leistungen",
+      "reality": "PJ-Reality",
+      "management": "PJ-Sprava",
+      "design": "PJ-Design"
+    },
+    "info": {
+      "title": "Navigation",
+      "services": "Unsere Leistungen",
+      "projects": "Unsere Arbeitsbeispiele",
+      "process": "Wie die Zusammenarbeit funktioniert"
+    },
+    "copyright": "\u00a9 2025 PJ-Rekonstrukce. Alle Rechte vorbehalten.",
+    "privacy": "Datenschutzerkl\u00e4rung"
   }
 }

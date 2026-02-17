@@ -119,7 +119,7 @@
     "email": "pavel.jaros@kwcz.cz",
     "address": "Karlovarský kraj",
     "hours": "Po - Pá: 8:00 - 16:00",
-    "ico": "IČO: [Doplnit IČO]",
+    "ico": "IČO: 10846671",
     "form": {
       "name": "Vaše jméno a příjmení*",
       "email": "Váš e-mail*",
@@ -146,8 +146,8 @@
       "name": "Pavel Jaroš",
       "phone": "+420 777 558 730",
       "email": "pavel.jaros@kwcz.cz",
-      "ico": "IČO: [Doplnit IČO]",
-      "address": "[Doplnit adresu sídla]"
+      "ico": "IČO: 10846671",
+      "address": "Kaprova 52/6, Praha 1"
     },
     "services": {
       "title": "Naše další služby",

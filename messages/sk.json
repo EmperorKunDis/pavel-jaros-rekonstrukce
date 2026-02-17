@@ -1,149 +1,167 @@
 {
-  "nav": {
-    "properties": "Nehnuteľnosti",
-    "services": "Služby",
-    "references": "Referencie",
-    "about": "O mne",
-    "contact": "Kontakt",
-    "contactMe": "KONTAKTUJTE MA"
-  },
   "cookie": {
-    "message": "Aby sme poskytli čo najlepšie služby, používame technológie ako sú súbory cookies na ukladanie a/alebo prístup k informáciám o zariadení.",
-    "reject": "Odmietnuť",
-    "accept": "Prijať",
-    "preferences": "Zobraziť predvoľby"
+    "message": "Tento web pou\u017e\u00edva cookies na zlep\u0161enie u\u017e\u00edvate\u013esk\u00e9ho z\u00e1\u017eitku. Pou\u017e\u00edvan\u00edm tohto webu s\u00fahlas\u00edte s na\u0161imi z\u00e1sadami cookies.",
+    "accept": "Prija\u0165 v\u0161etko",
+    "reject": "Odmietnu\u0165 v\u0161etko",
+    "preferences": "Zobrazi\u0165 predvo\u013eby"
+  },
+  "nav": {
+    "home": "Domov",
+    "services": "Slu\u017eby",
+    "projects": "Realiz\u00e1cie",
+    "about": "O n\u00e1s",
+    "contact": "Kontakt",
+    "cta": "Nez\u00e1v\u00e4zn\u00e1 ponuka"
   },
   "hero": {
-    "title": "Maximalizujte zisk z vašej nehnuteľnosti",
-    "cta": "MNOU PONÚKANÉ SLUŽBY"
-  },
-  "properties": {
-    "viewProperty": "PREZRIEŤ NEHNUTEĽNOSŤ",
-    "moreProperties": "VIAC NEHNUTEĽNOSTÍ"
+    "title": "Premen\u00edme va\u0161e sny na skuto\u010dnos\u0165.",
+    "subtitle": "Vykon\u00e1vame kompletn\u00e9 rekon\u0161trukcie bytov a domov v Karlovarskom kraji. Od prvotn\u00e9ho n\u00e1vrhu a\u017e po fin\u00e1lny \u00faklid \u2013 spo\u013eahlivo, kvalitne a na\u010das.",
+    "ctaPrimary": "Vypo\u010d\u00edta\u0165 cenu rekon\u0161trukcie",
+    "ctaSecondary": "Pozrie\u0165 realiz\u00e1cie"
   },
   "services": {
-    "title": "SLUŽBY",
-    "bookMeeting": "CHCEM SI DOHODNÚŤ STRETNUTIE",
-    "sale": {
-      "title": "PREDAJ",
-      "description": "Mojím cieľom je predať vašu nehnuteľnosť za najvyššiu možnú cenu na trhu a zabezpečiť, aby celý proces prebehol hladko a efektívne."
+    "title": "Od \u010diastkov\u00fdch \u00faprav po kompletn\u00fa premenu",
+    "cores": {
+      "title": "Rekon\u0161trukcie bytov\u00fdch jadier",
+      "text": "Modernizujeme a prestavujeme umak\u00e1rtov\u00e9 aj m\u00faron\u00e9 jadr\u00e1. Zv\u00fd\u0161te komfort a hodnotu svojho bytu."
     },
-    "rent": {
-      "title": "PRENÁJOM",
-      "description": "Vždy sa snažím dosiahnuť čo najvyššiu cenu prenájmu a zároveň nájsť solventných nájomcov, ktorí budú mať záujem o dlhodobý prenájom."
+    "apartments": {
+      "title": "Kompletn\u00e9 rekon\u0161trukcie bytov",
+      "text": "Zabezpe\u010d\u00edme v\u0161etko od b\u00farac\u00edch pr\u00e1c cez nov\u00e9 rozvody a\u017e po fin\u00e1lne povrchy a mont\u00e1\u017e kuchyne."
     },
-    "marketing": {
-      "title": "MARKETING A STRATÉGIA",
-      "description": "Marketing a reklama tvoria neoddeliteľnú časť mojej práce. Dávam si záležať na zvolení vhodnej stratégie s maximálnym nasadením."
+    "houses": {
+      "title": "Rekon\u0161trukcie rodinn\u00fdch domov",
+      "text": "Realizujeme vn\u00fatorn\u00e9 aj vonkaj\u0161ie rekon\u0161trukcie domov, vr\u00e1tane zateplenia, fas\u00e1d a \u00faprav dispoz\u00edci\u00ed."
     },
-    "presentation": {
-      "title": "PREZENTÁCIA NEHNUTEĽNOSTI",
-      "description": "Pri prezentácii nehnuteľnosti vždy kladiem dôraz na detail s využitím najnovších technológií, vrátane kvalitných fotografií a 3D vizualizácií."
-    },
-    "reconstruction": {
-      "title": "REKONŠTRUKCIA NEHNUTEĽNOSTI",
-      "description": "Vďaka skúsenostiam z niekoľkých kompletných rekonštrukcií vám môžem odporučiť vhodné riešenie a prípadne zabezpečiť profesionálov."
-    },
-    "valuation": {
-      "title": "ODHAD CENY NEHNUTEĽNOSTI",
-      "description": "K oceneniu nehnuteľnosti využívam overené nástroje, ako sú napríklad cenové mapy, spoločne s katastrom nehnuteľností."
-    },
-    "activities": {
-      "subtitle": "S ČÍM NAJČASTEJŠIE POMÁHAM SVOJIM KLIENTOM",
-      "title": "MOJA PRÁCA ZAHŔŇA NASLEDUJÚCE ČINNOSTI",
-      "list": {
-        "communication": "Obchodná komunikácia so záujemcami",
-        "targeting": "Identifikácia a špecifikácia cieľovej skupiny",
-        "negotiation": "Vyjednanie najlepších podmienok predaja",
-        "documentation": "Príprava dokumentácie",
-        "supervision": "Dohľad nad obchodným prípadom od začiatku do konca",
-        "strategy": "Nastavenie marketingovej stratégie a propagácie",
-        "socialMedia": "Platená propagácia na sociálnych sieťach",
-        "materials": "Príprava a tvorba reklamných materiálov",
-        "flyers": "Distribúcia letákov",
-        "print": "Umiestnenie inzercie v tlačených médiách",
-        "portals": "Zverejnenie inzerátov na všetkých realitných portáloch",
-        "websites": "Vytváranie webových stránok pre nehnuteľnosti"
-      }
+    "crafts": {
+      "title": "Remeselnn\u00e9 pr\u00e1ce",
+      "text": "Pon\u00fakame aj samostatn\u00e9 mur\u00e1rske, obklada\u010dsk\u00e9, podlah\u00e1rske, in\u0161talat\u00e9rske a elektrik\u00e1rske pr\u00e1ce."
     }
   },
-  "about": {
-    "subtitle": "O MNE",
-    "title": "PAVEL JAROŠ",
-    "intro": "Volám sa Pavel Jaroš a som realitný maklér, ktorý sa neustále snaží o profesný rast a zdokonaľovanie v odbore.",
-    "origin": "Pochádzam z Chebu a v realitách sa pohybujem štvrtým rokom ako investor (nákup - rekonštrukcia - predaj). Zaoberám sa v dnešnej dobe veľmi populárnym tzv. flipovaním nehnuteľností.",
-    "motivation": "Keďže by som sa rád v tomto odbore zdokonalil, rozhodol som sa pre cestu realitného makléra. Táto práca ma baví predovšetkým kvôli svojej rôznorodosti. Riešim nielen obchod, ale aj právnu problematiku a samotnú stavbu. Každý deň je tak úplne iný, čo ma napĺňa.",
-    "passion": "Baví ma hľadať vhodné riešenia, komunikovať, prepájať dodávateľov, investorov a všetko ostatné, čo s nehnuteľnosťami súvisí. Rád sa stretávam s novými ľuďmi a riešim prípady, s ktorými si iní nevedia rady. Spokojnosť klientov je pre mňa najvyššou odmenou.",
-    "values": "Vyznačujem sa empatiou a plne chápem, že každý klient vyžaduje individuálny a flexibilný prístup. Na dobrej povesti a mene si zakladám.",
-    "hobby": "Vo voľnom čase rád športujem, bez návštevy fitka si už neviem predstaviť dobre strávený deň. Ako správny blázon mám rád aj adrenalín – zoskoky padákom a akékoľvek adrenalínové atrakcie, do všetkého idem naplno. Život sa musí žiť.",
-    "location": {
-      "title": "LOKALITA",
-      "text": "Pôsobím prevažne v Prahe, v Stredočeskom a Západočeskom kraji, avšak som otvorený spolupráci po celej ČR."
+  "why": {
+    "title": "Va\u0161a rekon\u0161trukcia bez stresu a kompromisov",
+    "one": {
+      "title": "Jedna firma, v\u0161etky pr\u00e1ce",
+      "text": "Nemus\u00edte zh\u00e1\u0148a\u0165 a koordinova\u0165 r\u00f4zne remesla. Postar\u00e1me sa o kompletn\u00fd projektov\u00fd mana\u017ement a u\u0161etr\u00edme v\u00e1m \u010das aj starosti."
     },
-    "experience": {
-      "title": "AKO DLHO?",
-      "text1": "Ako investor v nehnuteľnostiach mám za sebou štyri roky plné úspešných projektov, medzi ktoré sa radia aj niekoľko zdařilých flipov nehnuteľností.",
-      "text2": "Donedávna som kompletné rekonštrukcie bytov v pôvodnom stave zarizoval sám, teraz už mám malú stavebnú firmu a nie je pre mňa teda problém klientovi s čímkoľvek pomôcť a nehnuteľnosť upraviť tak, aby bol výsledkom ľahký predaj a vyšší zisk."
+    "two": {
+      "title": "Dodr\u017eiavame term\u00edny a rozpo\u010dty",
+      "text": "Na za\u010diatku stanov\u00edme pevn\u00fd rozpo\u010det a harmonogram pr\u00e1c, ktor\u00fd je pre n\u00e1s z\u00e1v\u00e4zn\u00fd. S nami v\u00e1s ne\u010dakaj\u00fa \u017eiadne nepr\u00edjemn\u00e9 prekvapenia."
     },
-    "commission": {
-      "title": "PROVÍZIA",
-      "text": "Pri predaji nehnuteľnosti, poplatok známy ako provízia, hradí predávajúci. V konečnom dôsledku je to logické, pretože predávajúci je ten, kto si vyberá makléra a koho záujmy maklér háji. Výška provízie nie je pevne stanovená a môže sa líšiť v závislosti na rade faktorov, ako je predajná stratégia, marketingový rozpočet, umiestnenie a cena nehnuteľnosti. Obvykle sa však provízia pohybuje v rozmedzí 3 - 5 % z kúpnej ceny nehnuteľnosti."
+    "three": {
+      "title": "D\u00f4raz na kvalitu a detail",
+      "text": "Pou\u017e\u00edvame certifikovan\u00e9 materi\u00e1ly a overen\u00e9 postupy. Zaklad\u00e1me si na prec\u00edznom preveden\u00ed ka\u017ed\u00e9ho detailu, preto\u017ee na \u0148om z\u00e1le\u017e\u00ed."
     },
-    "why": {
-      "title": "PREČO SPOLUPRACOVAŤ SO MNOU?",
-      "individual": "Individuálny proklientský prístup",
-      "professional": "Profesionálna prezentácia nehnuteľnosti",
-      "efficiency": "Efektivita",
-      "experience": "Mnohoročné skúsenosti v odbore realít",
-      "flexibility": "Flexibilita"
+    "four": {
+      "title": "Osobn\u00fd pr\u00edstup a poradenstvo",
+      "text": "Sme va\u0161\u00edm partnerom po cel\u00fa dobu projektu. Nasl\u00fachame va\u0161im prianiam a radi v\u00e1m odborne porad\u00edme s v\u00fdberom materi\u00e1lov aj s technick\u00fdm rie\u0161en\u00edm."
+    }
+  },
+  "projects": {
+    "title": "Pozrite sa, ako pracujeme",
+    "subtitle": "Na\u0161a pr\u00e1ca hovor\u00ed za n\u00e1s",
+    "project1": {
+      "name": "Premena bytu 3+1",
+      "location": "Karlove Vary"
+    },
+    "project2": {
+      "name": "Nov\u00e1 k\u00fape\u013e\u0148a a jadro",
+      "location": "Cheb"
+    },
+    "project3": {
+      "name": "Rekon\u0161trukcia pr\u00edzemia rodinn\u00e9ho domu",
+      "location": "Sokolov"
+    },
+    "viewAll": "Zobrazi\u0165 v\u0161etky projekty",
+    "before": "PRED",
+    "after": "PO"
+  },
+  "process": {
+    "title": "Va\u0161a cesta k nov\u00e9mu b\u00fdvaniu v 5 krokoch",
+    "step1": {
+      "title": "Kontakt a \u00favodn\u00e1 konzult\u00e1cia",
+      "text": "Zavolajte n\u00e1m alebo nap\u00ed\u0161te. Preberiame va\u0161e predstavy a dohodn\u00edme si osobn\u00e9 stretnutie na mieste realiz\u00e1cie. V\u0161etko zadarmo."
+    },
+    "step2": {
+      "title": "Zameranie a cenov\u00e1 ponuka",
+      "text": "Vykon\u00e1me presn\u00e9 zameranie, prediskutujeme materi\u00e1ly a do t\u00fd\u017ed\u0148a v\u00e1m priprav\u00edme detailn\u00fa a transparentn\u00fa cenov\u00fa ponuku."
+    },
+    "step3": {
+      "title": "Zmluva a harmonogram",
+      "text": "Po ods\u00fahlasen\u00ed ponuky podp\u00ed\u0161eme zmluvu o dielo, ktor\u00e1 obsahuje pevn\u00fd rozpo\u010det, rozsah pr\u00e1c a z\u00e1v\u00e4zn\u00fd harmonogram."
+    },
+    "step4": {
+      "title": "Realiz\u00e1cia rekon\u0161trukcie",
+      "text": "N\u00e1\u0161 t\u00edm sa pust\u00ed do pr\u00e1ce. V priebehu stavby s vami pravidelne komunikujeme a vykon\u00e1vame kontroln\u00e9 dni."
+    },
+    "step5": {
+      "title": "Odovzdanie a z\u00e1ruka",
+      "text": "Po dokon\u010den\u00ed pr\u00e1c a fin\u00e1lnom \u00faklude v\u00e1m dielo protokol\u00e1rne odovzd\u00e1me. Na na\u0161u pr\u00e1cu samozrejme poskytujeme pln\u00fa z\u00e1ruku."
     }
   },
   "references": {
-    "subtitle": "ČO O MNE HOVORIA MOJI KLIENTI",
-    "title": "REFERENCIE",
+    "title": "Stovky spokojn\u00fdch z\u00e1kazn\u00edkov v regi\u00f3ne",
     "client1": {
-      "name": "Daniela Baudýsová",
-      "text": "Ďakujeme za rýchly a bezproblémový predaj chaty. Pán Jaroš je ochotný, vstřícny a veľmi profesionálny. Svojej práci rozumie. Určite odporúčame."
+      "name": "Rodina Nov\u00e1kov\u00e1",
+      "location": "Marianske L\u00e1zne",
+      "text": "Firma PJ-Rekonstrukce n\u00e1m kompletne predelala byt. Oce\u0148ujem skvel\u00fa komunik\u00e1ciu p\u00e1na Jaroša a dodr\u017eanie ceny aj term\u00ednu. V\u0161etko prebehlo naprosto hladko."
     },
     "client2": {
-      "name": "David",
-      "text": "Pán Jaroš bol skvelý – profesionálny, rýchly a vždy k dispozícii. Občas som mal pocit, že keby to bolo treba, predal by aj vlastnú babičku – a ešte by vyjednal lepšiu cenu. Vďaka za bezproblémový predaj a ľudský prístup."
-    },
-    "client3": {
-      "name": "Josef Neumann",
-      "text": "Proaktívny prístup a perfektná komunikácia. Maximálna spokojnosť!"
+      "name": "Petr S.",
+      "location": "Cheb",
+      "text": "Potreboval som r\u00fdchlo zrekon\u0161truova\u0165 byt po n\u00e1jomn\u00edkoch pred \u010fal\u0161\u00edm pren\u00e1jmom. V\u0161etko zvl\u00e1dli v rekordnom \u010dase a v skvelej kvalite. M\u00f4\u017eem len odporu\u010di\u0165."
     }
   },
   "contact": {
-    "subtitle": "ZOSTANEME V SPOJENÍ",
-    "title": "KONTAKT",
-    "address": {
-      "title": "ADRESA",
-      "text": "Kaprova 52/6, Praha 1"
-    },
-    "phone": {
-      "title": "TELEFÓN",
-      "text": "+420 777 558 730"
-    },
-    "email": {
-      "title": "E-MAIL",
-      "text": "pavel.jaros@kwcz.cz"
-    },
+    "title": "Nap\u00ed\u0161te si o nez\u00e1v\u00e4zn\u00fa cenov\u00fa ponuku",
+    "subtitle": "M\u00e1te projekt, s ktor\u00fdm v\u00e1m m\u00f4\u017eeme pom\u00f4c\u0165? Vypl\u0148te formul\u00e1r alebo n\u00e1m zavolajte. Ozveme sa v\u00e1m do 48 hod\u00edn a dohodn\u00edme si prv\u00e9 kroky.",
+    "phone": "+420 777 558 730",
+    "email": "pavel.jaros@kwcz.cz",
+    "address": "Karlovarsk\u00fd kraj",
+    "hours": "Po - Pi: 8:00 - 16:00",
+    "ico": "I\u010cO: 10846671",
     "form": {
-      "name": "Meno a priezvisko",
-      "email": "E-mail",
-      "phone": "Telefónne číslo",
-      "message": "Vaša správa",
-      "weekend": "Môžeme vás kontaktovať aj cez víkend?",
-      "gdpr": "Súhlasíte so spracovaním osobných údajov podľa zákona č. 101/2000 Zb. O ochrane osobných údajov",
-      "submit": "ODOSLAŤ"
+      "name": "Va\u0161e meno a priezvisko*",
+      "email": "V\u00e1\u0161 e-mail*",
+      "phone": "V\u00e1\u0161 telef\u00f3n*",
+      "service": "O ak\u00fa slu\u017ebu m\u00e1te z\u00e1ujem?",
+      "serviceOptions": {
+        "apartment": "Kompletn\u00e1 rekon\u0161trukcia bytu",
+        "core": "Rekon\u0161trukcia jadra",
+        "house": "Rekon\u0161trukcia domu",
+        "other": "In\u00e9..."
+      },
+      "message": "Stru\u010dne pop\u00ed\u0161te va\u0161u predstavu*",
+      "files": "Prilo\u017ei\u0165 s\u00fabory (p\u00f4dorys, fotografie - nepovinn\u00e9)",
+      "gdpr": "S\u00fahlas\u00edm so spracovan\u00edm osobn\u00fdch \u00fadajov.*",
+      "submit": "Odosla\u0165 dopyt",
+      "sending": "Odosiela sa...",
+      "success": "\u010eakujeme za va\u0161u spr\u00e1vu! Ozveme sa v\u00e1m \u010do najsk\u00f4r.",
+      "error": "Nastala chyba pri odosielan\u00ed formul\u00e1ra. Sk\u00faste to pros\u00edm znovu."
     }
   },
   "footer": {
-    "gdpr": "Prehliadaním webu súhlasíte so spracovaním osobných údajov a súborov cookies.",
-    "business": "Samostatný podnikateľ, podnikajúci na základe živnostenského listu, IČ: 10846671, zmocnený konať menom Keller Williams Metropolitan, ktorá je prevádzka spoločnosti MC Metropolitan s.r.o., IČ: 07796340.",
-    "ethics": "Etický kódex",
-    "consumer": "Poučenie pre spotrebiteľov",
-    "whistleblow": "Vnútorný oznamovací systém"
+    "contact": {
+      "title": "Kontakt",
+      "name": "Pavel Jaroš",
+      "phone": "+420 777 558 730",
+      "email": "pavel.jaros@kwcz.cz",
+      "ico": "I\u010cO: 10846671",
+      "address": "Kaprova 52/6, Praha 1"
+    },
+    "services": {
+      "title": "Na\u0161e \u010fal\u0161ie slu\u017eby",
+      "reality": "PJ-Reality",
+      "management": "PJ-Spr\u00e1va",
+      "design": "PJ-Design"
+    },
+    "info": {
+      "title": "Navig\u00e1cia",
+      "services": "Na\u0161e slu\u017eby",
+      "projects": "Uk\u00e1\u017eky na\u0161ej pr\u00e1ce",
+      "process": "Ako prebieha spolupr\u00e1ca"
+    },
+    "copyright": "\u00a9 2025 PJ-Rekonstrukce. V\u0161etky pr\u00e1va vyhraden\u00e9.",
+    "privacy": "Z\u00e1sady ochrany osobn\u00fdch \u00fadajov"
   }
 }

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../global.css";
 import ClientBody from "../ClientBody";
-import Script from "next/script";
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, getTranslations} from 'next-intl/server';
 import {routing} from '../../../i18n/routing';
@@ -21,24 +20,23 @@ const geistMono = Geist_Mono({
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  const t = await getTranslations({locale});
 
-  const title = "Pavel Jaroš - Realitní makléř | Keller Williams";
-  const description = "Profesionální realitní služby v Praze a okolí. Prodej, pronájem a odhad nemovitostí. Maximalizujte zisk z vaší nemovitosti.";
+  const title = "PJ Rekonstrukce - Kompletní rekonstrukce bytů a domů | Pavel Jaroš";
+  const description = "Provádíme kompletní rekonstrukce bytů a domů v Karlovarském kraji. Od prvotního návrhu až po finální úklid – spolehlivě, kvalitně a v termínu.";
 
   return {
     title,
     description,
-    keywords: ['realitní makléř', 'prodej nemovitostí', 'pronájem nemovitostí', 'odhad nemovitostí', 'Praha', 'Keller Williams', 'reality', 'byty', 'domy'],
+    keywords: ['rekonstrukce bytů', 'rekonstrukce domů', 'bytové jádro', 'Karlovarský kraj', 'stavební firma', 'Pavel Jaroš', 'rekonstrukce', 'přestavba'],
     authors: [{name: 'Pavel Jaroš'}],
     creator: 'Pavel Jaroš',
-    publisher: 'Keller Williams',
+    publisher: 'PJ Rekonstrukce',
     formatDetection: {
       email: false,
       address: false,
       telephone: false,
     },
-    metadataBase: new URL('https://pavel-jaros.cz'),
+    metadataBase: new URL('https://pjreko.cz'),
     alternates: {
       canonical: `/${locale}`,
       languages: {
@@ -53,14 +51,14 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
     openGraph: {
       title,
       description,
-      url: `https://pavel-jaros.cz/${locale}`,
-      siteName: 'Pavel Jaroš Reality',
+      url: `https://pjreko.cz/${locale}`,
+      siteName: 'PJ Rekonstrukce',
       images: [
         {
-          url: 'https://ext.same-assets.com/2530056946/4049786394.png',
+          url: '/images/PajaBezPrdeleReko.png',
           width: 1200,
           height: 630,
-          alt: 'Pavel Jaroš - Realitní makléř',
+          alt: 'PJ Rekonstrukce - Pavel Jaroš',
         },
       ],
       locale: locale,
@@ -70,7 +68,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
       card: 'summary_large_image',
       title,
       description,
-      images: ['https://ext.same-assets.com/2530056946/4049786394.png'],
+      images: ['/images/PajaBezPrdeleReko.png'],
     },
     robots: {
       index: true,
@@ -82,11 +80,6 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
         'max-image-preview': 'large',
         'max-snippet': -1,
       },
-    },
-    verification: {
-      // Add your verification codes when available
-      // google: 'your-google-site-verification',
-      // yandex: 'your-yandex-verification',
     },
   };
 }
@@ -106,60 +99,40 @@ export default async function RootLayout({
 }>) {
   const {locale} = await params;
 
-  // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
     notFound();
   }
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
   const messages = await getMessages();
 
-  // Structured data for SEO
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    "name": "Pavel Jaroš",
-    "image": "https://ext.same-assets.com/2530056946/2707997203.png",
-    "telephone": "+420-XXX-XXX-XXX",
-    "email": "pavel.jaros@example.com",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "PJ Rekonstrukce - Pavel Jaroš",
+    "image": "/images/PajaBezPrdeleReko.png",
+    "telephone": "+420 777 558 730",
+    "email": "pavel.jaros@kwcz.cz",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Praha",
+      "streetAddress": "Kaprova 52/6",
+      "addressLocality": "Praha 1",
       "addressCountry": "CZ"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "50.0755",
-      "longitude": "14.4378"
-    },
-    "url": `https://pavel-jaros.cz/${locale}`,
-    "logo": "https://ext.same-assets.com/2530056946/3299068684.svg",
-    "description": "Profesionální realitní služby v Praze a okolí. Prodej, pronájem a odhad nemovitostí.",
+    "url": `https://pjreko.cz/${locale}`,
+    "logo": "/logo/PJRekoLogo.png",
+    "description": "Provádíme kompletní rekonstrukce bytů a domů v Karlovarském kraji. Od prvotního návrhu až po finální úklid.",
     "priceRange": "$$",
     "areaServed": {
-      "@type": "City",
-      "name": "Praha"
+      "@type": "AdministrativeArea",
+      "name": "Karlovarský kraj"
     },
-    "knowsAbout": ["Real Estate", "Property Sales", "Property Rental", "Property Valuation"],
-    "memberOf": {
-      "@type": "Organization",
-      "name": "Keller Williams"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "reviewCount": "3"
-    }
+    "knowsAbout": ["Rekonstrukce bytů", "Rekonstrukce domů", "Bytová jádra", "Řemeslné práce"],
+    "taxID": "10846671"
   };
 
   return (
     <html lang={locale} className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
-        <Script
-          crossOrigin="anonymous"
-          src="//unpkg.com/same-runtime/dist/index.global.js"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

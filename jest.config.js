@@ -7,16 +7,11 @@ const createJestConfig = nextJest({
 
 // Add any custom config to be passed to Jest
 const customJestConfig = {
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  setupFilesAfterSetup: ['<rootDir>/jest.setup.js'],
   testEnvironment: 'jest-environment-jsdom',
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
-    '^same-runtime$': '<rootDir>/node_modules/react',
-    '^same-runtime/jsx-runtime$': '<rootDir>/node_modules/react/jsx-runtime',
   },
-  transformIgnorePatterns: [
-    'node_modules/(?!(same-runtime)/)',
-  ],
   collectCoverageFrom: [
     'src/**/*.{js,jsx,ts,tsx}',
     '!src/**/*.d.ts',

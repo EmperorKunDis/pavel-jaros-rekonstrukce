@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Facebook, Instagram, Linkedin, Menu, Phone, MapPin, Mail, Home as HomeIcon, Building2, Hammer, PaintBucket, Wrench, Shield, Clock, FileCheck, Users, Check, Globe, AlertCircle, CheckCircle2, Loader2 } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Menu, X, Phone, MapPin, Mail, Home as HomeIcon, Building2, Wrench, Shield, Clock, Users, Check, Globe, AlertCircle, CheckCircle2, Loader2 } from "lucide-react";
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter, usePathname } from '../../../i18n/routing';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
   const t = useTranslations();
@@ -16,6 +16,26 @@ export default function Home() {
   const router = useRouter();
   const pathname = usePathname();
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showCookieBanner, setShowCookieBanner] = useState(false);
+
+  // Cookie banner logic
+  useEffect(() => {
+    const consent = document.cookie.split('; ').find(row => row.startsWith('cookie_consent='));
+    if (!consent) {
+      setShowCookieBanner(true);
+    }
+  }, []);
+
+  const handleAcceptCookies = () => {
+    document.cookie = "cookie_consent=accepted; max-age=31536000; path=/; SameSite=Lax";
+    setShowCookieBanner(false);
+  };
+
+  const handleRejectCookies = () => {
+    document.cookie = "cookie_consent=rejected; max-age=31536000; path=/; SameSite=Lax";
+    setShowCookieBanner(false);
+  };
 
   // Contact form state
   const [formData, setFormData] = useState({
@@ -31,12 +51,12 @@ export default function Home() {
   const [formSuccess, setFormSuccess] = useState(false);
 
   const languages = [
-    { code: 'cs', name: 'Čeština', flag: '🇨🇿' },
+    { code: 'cs', name: 'Cestina', flag: '🇨🇿' },
     { code: 'en', name: 'English', flag: '🇬🇧' },
     { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
     { code: 'pl', name: 'Polski', flag: '🇵🇱' },
-    { code: 'sk', name: 'Slovenčina', flag: '🇸🇰' },
-    { code: 'ru', name: 'Русский', flag: '🇷🇺' },
+    { code: 'sk', name: 'Slovencina', flag: '🇸🇰' },
+    { code: 'ru', name: 'Russkij', flag: '🇷🇺' },
   ];
 
   const handleLanguageChange = (newLocale: string) => {
@@ -50,27 +70,28 @@ export default function Home() {
     setFormSuccess(false);
 
     if (!formData.name || !formData.email || !formData.message) {
-      setFormError('Vyplňte prosím všechna povinná pole.');
+      setFormError('Vyplnte prosim vsechna povinna pole.');
       return;
     }
 
     if (!formData.consent) {
-      setFormError('Prosím potvrďte souhlas se zpracováním osobních údajů.');
+      setFormError('Prosim potvrdte souhlas se zpracovanim osobnich udaju.');
       return;
     }
 
     setFormLoading(true);
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const form = e.target as HTMLFormElement;
+      const formDataObj = new FormData(form);
 
-      const data = await response.json();
+      const response = await fetch('https://formspree.io/f/TVUJ_FORMSPREE_ID', {
+        method: 'POST',
+        body: formDataObj,
+        headers: {
+          'Accept': 'application/json',
+        },
+      });
 
       if (response.ok) {
         setFormSuccess(true);
@@ -83,33 +104,44 @@ export default function Home() {
           consent: false,
         });
       } else {
-        setFormError(data.error || 'Nastala chyba při odesílání formuláře.');
+        setFormError('Nastala chyba pri odesilani formulare.');
       }
-    } catch (error) {
-      setFormError('Nastala chyba při odesílání formuláře. Zkuste to prosím znovu.');
+    } catch {
+      setFormError('Nastala chyba pri odesilani formulare. Zkuste to prosim znovu.');
     } finally {
       setFormLoading(false);
     }
   };
 
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    setMobileMenuOpen(false);
+  };
+
   return (
     <div className="min-h-screen">
+      {/* Skip to content */}
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-[100] focus:bg-white focus:px-4 focus:py-2 focus:text-red-700">
+        Prejit na obsah
+      </a>
+
       {/* Cookie Banner */}
-      <div className="fixed top-0 left-0 right-0 bg-white shadow-lg p-3 z-50 border-b">
-        <div className="max-w-6xl mx-auto flex items-center justify-between flex-wrap gap-3">
-          <p className="text-xs text-gray-600 flex-1 min-w-0">
-            {t('cookie.message')}
-          </p>
-          <div className="flex gap-2 flex-shrink-0">
-            <Button variant="outline" size="sm" className="text-xs">{t('cookie.reject')}</Button>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white text-xs" size="sm">{t('cookie.accept')}</Button>
-            <Button variant="outline" size="sm" className="text-xs">{t('cookie.preferences')}</Button>
+      {showCookieBanner && (
+        <div className="fixed top-0 left-0 right-0 bg-white shadow-lg p-3 z-50 border-b" role="dialog" aria-label="Cookie consent">
+          <div className="max-w-6xl mx-auto flex items-center justify-between flex-wrap gap-3">
+            <p className="text-xs text-gray-600 flex-1 min-w-0">
+              {t('cookie.message')}
+            </p>
+            <div className="flex gap-2 flex-shrink-0">
+              <Button variant="outline" size="sm" className="text-xs" onClick={handleRejectCookies}>{t('cookie.reject')}</Button>
+              <Button className="bg-red-700 hover:bg-red-800 text-white text-xs" size="sm" onClick={handleAcceptCookies}>{t('cookie.accept')}</Button>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Header */}
-      <header className="bg-white shadow-sm border-b fixed top-[65px] left-0 right-0 z-40">
+      <header className={`bg-white shadow-sm border-b fixed ${showCookieBanner ? 'top-[52px]' : 'top-0'} left-0 right-0 z-40`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -124,20 +156,20 @@ export default function Home() {
             </div>
 
             {/* Navigation */}
-            <nav className="hidden md:flex space-x-6">
-              <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">{t('nav.home')}</a>
-              <a href="#sluzby" className="text-gray-700 hover:text-blue-600 transition-colors">{t('nav.services')}</a>
-              <a href="#realizace" className="text-gray-700 hover:text-blue-600 transition-colors">{t('nav.projects')}</a>
-              <a href="#o-nas" className="text-gray-700 hover:text-blue-600 transition-colors">{t('nav.about')}</a>
-              <a href="#kontakt" className="text-gray-700 hover:text-blue-600 transition-colors">{t('nav.contact')}</a>
+            <nav className="hidden md:flex space-x-6" aria-label="Main navigation">
+              <a href="#top" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-gray-700 hover:text-red-700 transition-colors">{t('nav.home')}</a>
+              <a href="#sluzby" className="text-gray-700 hover:text-red-700 transition-colors">{t('nav.services')}</a>
+              <a href="#realizace" className="text-gray-700 hover:text-red-700 transition-colors">{t('nav.projects')}</a>
+              <a href="#o-nas" className="text-gray-700 hover:text-red-700 transition-colors">{t('nav.about')}</a>
+              <a href="#kontakt" className="text-gray-700 hover:text-red-700 transition-colors">{t('nav.contact')}</a>
             </nav>
 
             {/* Right side */}
             <div className="flex items-center space-x-4">
               {/* Phone */}
-              <div className="hidden lg:flex items-center text-blue-600">
+              <div className="hidden lg:flex items-center text-red-700">
                 <Phone className="h-4 w-4 mr-2" />
-                <span className="text-sm font-semibold">{t('contact.phone')}</span>
+                <a href="tel:+420777558730" className="text-sm font-semibold">{t('contact.phone')}</a>
               </div>
 
               {/* Language Switcher */}
@@ -145,6 +177,7 @@ export default function Home() {
                 <button
                   onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
                   className="flex items-center space-x-1 px-2 py-1 rounded-md hover:bg-gray-100 transition-colors"
+                  aria-label="Language selector"
                 >
                   <Globe className="h-4 w-4 text-gray-600" />
                   <span className="text-sm font-medium text-gray-700 uppercase">{locale}</span>
@@ -157,7 +190,7 @@ export default function Home() {
                         key={lang.code}
                         onClick={() => handleLanguageChange(lang.code)}
                         className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 flex items-center space-x-3 ${
-                          locale === lang.code ? 'bg-blue-50 text-blue-600 font-semibold' : 'text-gray-700'
+                          locale === lang.code ? 'bg-red-50 text-red-700 font-semibold' : 'text-gray-700'
                         }`}
                       >
                         <span className="text-xl">{lang.flag}</span>
@@ -169,25 +202,52 @@ export default function Home() {
               </div>
 
               <Button
-                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold"
-                onClick={() => document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' })}
+                className="hidden sm:inline-flex bg-red-700 hover:bg-red-800 text-white font-semibold"
+                onClick={() => scrollTo('kontakt')}
               >
                 {t('nav.cta')}
               </Button>
-              <Menu className="h-6 w-6 md:hidden" />
+
+              {/* Mobile menu button */}
+              <button
+                className="md:hidden p-2 rounded-md hover:bg-gray-100"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label="Menu"
+                aria-expanded={mobileMenuOpen}
+              >
+                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
             </div>
           </div>
+
+          {/* Mobile Navigation */}
+          {mobileMenuOpen && (
+            <nav className="md:hidden border-t py-4 space-y-2" aria-label="Mobile navigation">
+              <a href="#top" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); setMobileMenuOpen(false); }} className="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-md">{t('nav.home')}</a>
+              <a href="#sluzby" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-md">{t('nav.services')}</a>
+              <a href="#realizace" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-md">{t('nav.projects')}</a>
+              <a href="#o-nas" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-md">{t('nav.about')}</a>
+              <a href="#kontakt" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-md">{t('nav.contact')}</a>
+              <div className="px-4 pt-2">
+                <a href="tel:+420777558730" className="flex items-center text-red-700 font-semibold">
+                  <Phone className="h-4 w-4 mr-2" />
+                  +420 777 558 730
+                </a>
+              </div>
+            </nav>
+          )}
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-[145px]">
+      <section id="main-content" className={`relative min-h-screen flex items-center ${showCookieBanner ? 'pt-[120px]' : 'pt-[68px]'}`}>
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070"
             alt="Modern home reconstruction"
             fill
             className="object-cover object-center"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
         </div>
@@ -201,15 +261,15 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
-                className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-6 font-semibold"
-                onClick={() => document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-red-700 hover:bg-red-800 text-white text-lg px-8 py-6 font-semibold"
+                onClick={() => scrollTo('kontakt')}
               >
                 {t('hero.ctaPrimary')}
               </Button>
               <Button
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-6 font-semibold"
-                onClick={() => document.getElementById('realizace')?.scrollIntoView({ behavior: 'smooth' })}
+                className="border-2 border-white text-white hover:bg-white hover:text-red-700 text-lg px-8 py-6 font-semibold"
+                onClick={() => scrollTo('realizace')}
               >
                 {t('hero.ctaSecondary')}
               </Button>
@@ -226,33 +286,33 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="border-2 hover:border-blue-600 transition-all hover:shadow-xl">
+            <Card className="border-2 hover:border-red-700 transition-all hover:shadow-xl">
               <CardContent className="p-8 text-center">
-                <HomeIcon className="h-16 w-16 text-blue-600 mx-auto mb-6" />
+                <HomeIcon className="h-16 w-16 text-red-700 mx-auto mb-6" aria-hidden="true" />
                 <h3 className="text-xl font-bold mb-4 text-gray-900">{t('services.cores.title')}</h3>
                 <p className="text-gray-600 leading-relaxed">{t('services.cores.text')}</p>
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:border-blue-600 transition-all hover:shadow-xl">
+            <Card className="border-2 hover:border-red-700 transition-all hover:shadow-xl">
               <CardContent className="p-8 text-center">
-                <Building2 className="h-16 w-16 text-blue-600 mx-auto mb-6" />
+                <Building2 className="h-16 w-16 text-red-700 mx-auto mb-6" aria-hidden="true" />
                 <h3 className="text-xl font-bold mb-4 text-gray-900">{t('services.apartments.title')}</h3>
                 <p className="text-gray-600 leading-relaxed">{t('services.apartments.text')}</p>
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:border-blue-600 transition-all hover:shadow-xl">
+            <Card className="border-2 hover:border-red-700 transition-all hover:shadow-xl">
               <CardContent className="p-8 text-center">
-                <HomeIcon className="h-16 w-16 text-blue-600 mx-auto mb-6" />
+                <HomeIcon className="h-16 w-16 text-red-700 mx-auto mb-6" aria-hidden="true" />
                 <h3 className="text-xl font-bold mb-4 text-gray-900">{t('services.houses.title')}</h3>
                 <p className="text-gray-600 leading-relaxed">{t('services.houses.text')}</p>
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:border-blue-600 transition-all hover:shadow-xl">
+            <Card className="border-2 hover:border-red-700 transition-all hover:shadow-xl">
               <CardContent className="p-8 text-center">
-                <Wrench className="h-16 w-16 text-blue-600 mx-auto mb-6" />
+                <Wrench className="h-16 w-16 text-red-700 mx-auto mb-6" aria-hidden="true" />
                 <h3 className="text-xl font-bold mb-4 text-gray-900">{t('services.crafts.title')}</h3>
                 <p className="text-gray-600 leading-relaxed">{t('services.crafts.text')}</p>
               </CardContent>
@@ -270,32 +330,32 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Check className="h-8 w-8" />
+              <div className="bg-red-700 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Check className="h-8 w-8" aria-hidden="true" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">{t('why.one.title')}</h3>
               <p className="text-gray-600">{t('why.one.text')}</p>
             </div>
 
             <div className="text-center">
-              <div className="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Clock className="h-8 w-8" />
+              <div className="bg-red-700 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Clock className="h-8 w-8" aria-hidden="true" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">{t('why.two.title')}</h3>
               <p className="text-gray-600">{t('why.two.text')}</p>
             </div>
 
             <div className="text-center">
-              <div className="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Shield className="h-8 w-8" />
+              <div className="bg-red-700 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Shield className="h-8 w-8" aria-hidden="true" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">{t('why.three.title')}</h3>
               <p className="text-gray-600">{t('why.three.text')}</p>
             </div>
 
             <div className="text-center">
-              <div className="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Users className="h-8 w-8" />
+              <div className="bg-red-700 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Users className="h-8 w-8" aria-hidden="true" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">{t('why.four.title')}</h3>
               <p className="text-gray-600">{t('why.four.text')}</p>
@@ -317,13 +377,14 @@ export default function Home() {
                 <div className="relative h-80">
                   <Image
                     src="https://images.unsplash.com/photo-1556912173-46c336c7fd55?q=80&w=2070"
-                    alt="Rekonstrukce bytu 3+1"
+                    alt={t('projects.project1.name')}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
                   />
                   <div className="absolute top-4 left-4">
                     <div className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded text-xs font-semibold text-gray-900">
-                      PŘED / PO
+                      {t('projects.before')} / {t('projects.after')}
                     </div>
                   </div>
                 </div>
@@ -339,13 +400,14 @@ export default function Home() {
                 <div className="relative h-80">
                   <Image
                     src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=2070"
-                    alt="Nová koupelna"
+                    alt={t('projects.project2.name')}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
                   />
                   <div className="absolute top-4 left-4">
                     <div className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded text-xs font-semibold text-gray-900">
-                      PŘED / PO
+                      {t('projects.before')} / {t('projects.after')}
                     </div>
                   </div>
                 </div>
@@ -361,13 +423,14 @@ export default function Home() {
                 <div className="relative h-80">
                   <Image
                     src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053"
-                    alt="Rekonstrukce domu"
+                    alt={t('projects.project3.name')}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
                   />
                   <div className="absolute top-4 left-4">
                     <div className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded text-xs font-semibold text-gray-900">
-                      PŘED / PO
+                      {t('projects.before')} / {t('projects.after')}
                     </div>
                   </div>
                 </div>
@@ -380,7 +443,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 font-semibold">
+            <Button variant="outline" className="border-red-700 text-red-700 hover:bg-red-700 hover:text-white px-8 py-3 font-semibold">
               {t('projects.viewAll')}
             </Button>
           </div>
@@ -397,7 +460,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto space-y-8">
             {[1, 2, 3, 4, 5].map((i) => (
               <div key={i} className="flex gap-6 items-start">
-                <div className="flex-shrink-0 bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">
+                <div className="flex-shrink-0 bg-red-700 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">
                   {i}
                 </div>
                 <div>
@@ -418,19 +481,19 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="bg-blue-600 text-white border-0 shadow-xl">
+            <Card className="bg-red-700 text-white border-0 shadow-xl">
               <CardContent className="p-8">
                 <div className="mb-4">
-                  <p className="text-blue-100 italic text-lg leading-relaxed">"{t('references.client1.text')}"</p>
+                  <p className="text-red-100 italic text-lg leading-relaxed">&ldquo;{t('references.client1.text')}&rdquo;</p>
                 </div>
                 <p className="font-semibold">{t('references.client1.name')}</p>
               </CardContent>
             </Card>
 
-            <Card className="bg-blue-600 text-white border-0 shadow-xl">
+            <Card className="bg-red-700 text-white border-0 shadow-xl">
               <CardContent className="p-8">
                 <div className="mb-4">
-                  <p className="text-blue-100 italic text-lg leading-relaxed">"{t('references.client2.text')}"</p>
+                  <p className="text-red-100 italic text-lg leading-relaxed">&ldquo;{t('references.client2.text')}&rdquo;</p>
                 </div>
                 <p className="font-semibold">{t('references.client2.name')}</p>
               </CardContent>
@@ -446,17 +509,18 @@ export default function Home() {
             <div className="relative aspect-[4/5] lg:aspect-[3/4]">
               <Image
                 src="/images/PajaBezPrdeleReko.png"
-                alt="Pavel Jaroš"
+                alt="Pavel Jaros - PJ Rekonstrukce"
                 fill
                 className="object-contain rounded-lg shadow-xl"
+                loading="lazy"
               />
             </div>
 
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">O nás</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">{t('nav.about')}</h2>
               <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
-                <p>Jsem Pavel Jaroš a specializuji se na kompletní rekonstrukce bytů a domů. S mnohaletými zkušenostmi v oboru vám pomohu proměnit váš prostor v místo, kde budete rádi trávit čas.</p>
-                <p>Mým cílem je poskytnout vám kvalitní služby za férové ceny a dodržet všechny dohodnuté termíny. Každý projekt je pro mě jedinečný a přistupuji k němu s maximální pečlivostí.</p>
+                <p>Jsem Pavel Jaros a specializuji se na kompletni rekonstrukce bytu a domu. S mnohaletymi zkusenostmi v oboru vam pomohu promenit vas prostor v misto, kde budete radi travit cas.</p>
+                <p>Mym cilem je poskytnout vam kvalitni sluzby za ferove ceny a dodrzet vsechny dohodnute terminy. Kazdy projekt je pro me jedinecny a pristupuji k nemu s maximalni peclivosti.</p>
               </div>
             </div>
           </div>
@@ -464,45 +528,45 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="kontakt" className="py-20 bg-blue-600 text-white">
+      <section id="kontakt" className="py-20 bg-red-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">{t('contact.title')}</h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">{t('contact.subtitle')}</p>
+            <p className="text-xl text-red-100 max-w-3xl mx-auto">{t('contact.subtitle')}</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Info */}
             <div className="space-y-6">
               <div className="flex items-start">
-                <MapPin className="h-6 w-6 mr-4 mt-1 flex-shrink-0" />
+                <MapPin className="h-6 w-6 mr-4 mt-1 flex-shrink-0" aria-hidden="true" />
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Adresa</h3>
-                  <p className="text-blue-100">{t('contact.address')}</p>
+                  <p className="text-red-100">{t('contact.address')}</p>
                 </div>
               </div>
 
               <div className="flex items-start">
-                <Phone className="h-6 w-6 mr-4 mt-1 flex-shrink-0" />
+                <Phone className="h-6 w-6 mr-4 mt-1 flex-shrink-0" aria-hidden="true" />
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Telefon</h3>
-                  <a href={`tel:${t('contact.phone')}`} className="text-blue-100 hover:text-white">{t('contact.phone')}</a>
+                  <a href="tel:+420777558730" className="text-red-100 hover:text-white">{t('contact.phone')}</a>
                 </div>
               </div>
 
               <div className="flex items-start">
-                <Mail className="h-6 w-6 mr-4 mt-1 flex-shrink-0" />
+                <Mail className="h-6 w-6 mr-4 mt-1 flex-shrink-0" aria-hidden="true" />
                 <div>
                   <h3 className="font-semibold text-lg mb-1">E-mail</h3>
-                  <a href={`mailto:${t('contact.email')}`} className="text-blue-100 hover:text-white">{t('contact.email')}</a>
+                  <a href="mailto:pavel.jaros@kwcz.cz" className="text-red-100 hover:text-white">{t('contact.email')}</a>
                 </div>
               </div>
 
               <div className="flex items-start">
-                <Clock className="h-6 w-6 mr-4 mt-1 flex-shrink-0" />
+                <Clock className="h-6 w-6 mr-4 mt-1 flex-shrink-0" aria-hidden="true" />
                 <div>
-                  <h3 className="font-semibold text-lg mb-1">Provozní doba</h3>
-                  <p className="text-blue-100">{t('contact.hours')}</p>
+                  <h3 className="font-semibold text-lg mb-1">Provozni doba</h3>
+                  <p className="text-red-100">{t('contact.hours')}</p>
                 </div>
               </div>
             </div>
@@ -510,30 +574,36 @@ export default function Home() {
             {/* Contact Form */}
             <div>
               <form className="space-y-4" onSubmit={handleFormSubmit}>
+                {/* Honeypot anti-spam */}
+                <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+
                 {formError && (
-                  <div className="bg-blue-700 border border-blue-500 rounded-md p-4 flex items-center gap-3">
-                    <AlertCircle className="h-5 w-5 flex-shrink-0" />
+                  <div className="bg-red-700 border border-red-500 rounded-md p-4 flex items-center gap-3" role="alert">
+                    <AlertCircle className="h-5 w-5 flex-shrink-0" aria-hidden="true" />
                     <p className="text-sm">{formError}</p>
                   </div>
                 )}
 
                 {formSuccess && (
-                  <div className="bg-blue-700 border border-blue-500 rounded-md p-4 flex items-center gap-3">
-                    <CheckCircle2 className="h-5 w-5 flex-shrink-0" />
+                  <div className="bg-red-700 border border-red-500 rounded-md p-4 flex items-center gap-3" role="status">
+                    <CheckCircle2 className="h-5 w-5 flex-shrink-0" aria-hidden="true" />
                     <p className="text-sm">{t('contact.form.success')}</p>
                   </div>
                 )}
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <Input
+                    name="name"
                     placeholder={t('contact.form.name')}
                     className="bg-transparent border-white/30 text-white placeholder:text-white/70 focus:border-white"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
                     disabled={formLoading}
+                    aria-label={t('contact.form.name')}
                   />
                   <Input
+                    name="email"
                     placeholder={t('contact.form.email')}
                     type="email"
                     className="bg-transparent border-white/30 text-white placeholder:text-white/70 focus:border-white"
@@ -541,20 +611,25 @@ export default function Home() {
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
                     disabled={formLoading}
+                    aria-label={t('contact.form.email')}
                   />
                 </div>
                 <Input
+                  name="phone"
                   placeholder={t('contact.form.phone')}
                   className="bg-transparent border-white/30 text-white placeholder:text-white/70 focus:border-white"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   required
                   disabled={formLoading}
+                  aria-label={t('contact.form.phone')}
                 />
                 <select
+                  name="service"
                   className="w-full bg-transparent border border-white/30 text-white rounded-md px-3 py-2 focus:border-white focus:outline-none"
                   value={formData.service}
                   onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                  aria-label={t('contact.form.service')}
                 >
                   <option value="" className="text-gray-900">{t('contact.form.service')}</option>
                   <option value="apartment" className="text-gray-900">{t('contact.form.serviceOptions.apartment')}</option>
@@ -563,6 +638,7 @@ export default function Home() {
                   <option value="other" className="text-gray-900">{t('contact.form.serviceOptions.other')}</option>
                 </select>
                 <Textarea
+                  name="message"
                   placeholder={t('contact.form.message')}
                   rows={4}
                   className="bg-transparent border-white/30 text-white placeholder:text-white/70 focus:border-white resize-none"
@@ -570,23 +646,25 @@ export default function Home() {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
                   disabled={formLoading}
+                  aria-label={t('contact.form.message')}
                 />
 
                 <label className="flex items-start cursor-pointer text-sm">
                   <input
                     type="checkbox"
+                    name="consent"
                     className="mr-3 mt-0.5"
                     checked={formData.consent}
                     onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
                     required
                     disabled={formLoading}
                   />
-                  <span className="text-blue-100">{t('contact.form.gdpr')}</span>
+                  <span className="text-red-100">{t('contact.form.gdpr')}</span>
                 </label>
 
                 <Button
                   type="submit"
-                  className="w-full bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 text-lg"
+                  className="w-full bg-white text-red-700 hover:bg-gray-100 font-semibold py-3 text-lg"
                   disabled={formLoading}
                 >
                   {formLoading ? (
@@ -605,16 +683,16 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-blue-700 text-white py-12">
+      <footer className="bg-red-800 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             {/* Contact Column */}
             <div>
               <h3 className="font-bold text-lg mb-4">{t('footer.contact.title')}</h3>
-              <div className="space-y-2 text-sm text-blue-100">
+              <div className="space-y-2 text-sm text-red-100">
                 <p>{t('footer.contact.name')}</p>
-                <p>{t('footer.contact.phone')}</p>
-                <p>{t('footer.contact.email')}</p>
+                <p><a href="tel:+420777558730" className="hover:text-white">{t('footer.contact.phone')}</a></p>
+                <p><a href="mailto:pavel.jaros@kwcz.cz" className="hover:text-white">{t('footer.contact.email')}</a></p>
                 <p className="mt-4">{t('footer.contact.ico')}</p>
                 <p>{t('footer.contact.address')}</p>
               </div>
@@ -623,33 +701,39 @@ export default function Home() {
             {/* Services Column */}
             <div>
               <h3 className="font-bold text-lg mb-4">{t('footer.services.title')}</h3>
-              <div className="space-y-2 text-sm text-blue-100">
-                <a href="#" className="block hover:text-white">{t('footer.services.management')}</a>
-                <a href="#" className="block hover:text-white">{t('footer.services.reality')}</a>
-                <a href="#" className="block hover:text-white">{t('footer.services.design')}</a>
+              <div className="space-y-2 text-sm text-red-100">
+                <a href="https://pjsprava.cz" className="block hover:text-white" target="_blank" rel="noopener noreferrer">{t('footer.services.management')}</a>
+                <a href="https://pjreality.cz" className="block hover:text-white" target="_blank" rel="noopener noreferrer">{t('footer.services.reality')}</a>
+                <a href="https://pjdesign.cz" className="block hover:text-white" target="_blank" rel="noopener noreferrer">{t('footer.services.design')}</a>
               </div>
             </div>
 
             {/* Info Column */}
             <div>
               <h3 className="font-bold text-lg mb-4">{t('footer.info.title')}</h3>
-              <div className="space-y-2 text-sm text-blue-100">
+              <div className="space-y-2 text-sm text-red-100">
                 <a href="#sluzby" className="block hover:text-white">{t('footer.info.services')}</a>
                 <a href="#realizace" className="block hover:text-white">{t('footer.info.projects')}</a>
-                <a href="#" className="block hover:text-white">{t('footer.info.process')}</a>
+                <a href="#kontakt" className="block hover:text-white">{t('footer.info.process')}</a>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-blue-600 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-blue-100">
+          <div className="border-t border-red-600 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-red-100">
             <p>{t('footer.copyright')}</p>
-            <a href="#" className="hover:text-white mt-4 md:mt-0">{t('footer.privacy')}</a>
+            <a href="#kontakt" className="hover:text-white mt-4 md:mt-0">{t('footer.privacy')}</a>
           </div>
 
           <div className="flex justify-center space-x-6 mt-8">
-            <Facebook className="h-6 w-6 hover:text-blue-200 cursor-pointer transition-colors" />
-            <Instagram className="h-6 w-6 hover:text-blue-200 cursor-pointer transition-colors" />
-            <Linkedin className="h-6 w-6 hover:text-blue-200 cursor-pointer transition-colors" />
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <Facebook className="h-6 w-6 hover:text-red-200 cursor-pointer transition-colors" />
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <Instagram className="h-6 w-6 hover:text-red-200 cursor-pointer transition-colors" />
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <Linkedin className="h-6 w-6 hover:text-red-200 cursor-pointer transition-colors" />
+            </a>
           </div>
         </div>
       </footer>
